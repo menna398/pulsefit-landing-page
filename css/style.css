@@ -221,6 +221,10 @@ body {
   z-index: 3;
 
   animation: featureFloat 4s ease-in-out infinite;
+
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .hero-feature h3 {
@@ -624,5 +628,266 @@ body {
 
   50% {
     transform: translate(-50%, calc(-50% - 10px));
+  }
+}
+
+/* ==================== Features Section ==================== */
+
+.features-section {
+  position: relative;
+
+  padding: 110px 0 120px;
+
+  background: #080b25;
+
+  overflow: hidden;
+}
+
+/* ==================== Features Header ==================== */
+
+.features-header {
+  text-align: center;
+
+  max-width: 720px;
+
+  margin: 0 auto 68px;
+}
+
+.features-label {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: #3f8cff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.features-header h2 {
+  margin: 0;
+
+  color: #f3f5ff;
+
+  font-size: 3em;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  font-weight: 700;
+}
+
+.features-header p {
+  max-width: 650px;
+
+  margin: 24px auto 0;
+
+  color: #8f98bd;
+
+  font-size: 1em;
+
+  line-height: 1.7;
+}
+
+/* ==================== Feature Cards ==================== */
+
+.feature-card {
+  height: 100%;
+
+  min-height: 230px;
+
+  padding: 26px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 16px;
+
+  background: rgba(10, 16, 43, 0.85);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Hover */
+
+.feature-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(85, 125, 255, 0.35);
+
+  background: rgba(15, 22, 54, 0.95);
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* ==================== Feature Icon ==================== */
+
+.feature-card-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  border-radius: 15px;
+
+  font-size: 23px;
+}
+
+/* Icon Colors */
+
+.icon-pink {
+  background: rgba(255, 74, 151, 0.14);
+  color: #ff5b9a;
+}
+
+.icon-purple {
+  background: rgba(112, 71, 245, 0.16);
+  color: #a78bfa;
+}
+
+.icon-green {
+  background: rgba(0, 220, 180, 0.13);
+  color: #32e6c1;
+}
+
+.icon-blue {
+  background: rgba(63, 140, 255, 0.14);
+  color: #5da1ff;
+}
+
+/* ==================== Card Text ==================== */
+
+.feature-card h3 {
+  margin: 0 0 12px;
+
+  color: #f3f5ff;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.feature-card p {
+  margin: 0;
+
+  color: #8f98bd;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+/* ==================== Wide Cards ==================== */
+
+.feature-card-wide {
+  min-height: 145px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 20px;
+}
+
+.feature-card-wide .feature-card-icon {
+  flex-shrink: 0;
+
+  margin-bottom: 0;
+}
+
+/* ==================== Reveal Animation ==================== */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(45px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* ==================== Animation Delays ==================== */
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+
+.reveal-delay-5 {
+  transition-delay: 0.5s;
+}
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 768px) {
+  .features-section {
+    padding: 80px 0 90px;
+  }
+
+  .features-header {
+    margin-bottom: 45px;
+  }
+
+  .features-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .features-header h2 {
+    font-size: 38px;
+
+    letter-spacing: -1px;
+  }
+
+  .features-header p {
+    font-size: 14px;
+
+    max-width: 320px;
+  }
+
+  .feature-card {
+    min-height: 210px;
+
+    padding: 22px;
+  }
+
+  .feature-card-wide {
+    min-height: 180px;
+
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  .feature-card-wide .feature-card-icon {
+    margin-bottom: 20px;
   }
 }

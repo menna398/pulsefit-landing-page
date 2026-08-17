@@ -21,8 +21,16 @@
     <!-- Page Title -->
     <title>PulseFit | Smart Fitness Tracker</title>
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
     <!-- Stylesheet -->
-     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -62,23 +70,22 @@
       <!-- ==================== Hero Section ==================== -->
       <section id="hero" class="hero">
         <div class="hero-content">
-          <div class="hero-feature hero-feature-left">
+          <a href="#features" class="hero-feature hero-feature-left">
             <span class="feature-icon">♡</span>
 
             <div>
               <h3>Real-Time Health</h3>
               <p>24/7 biometric data</p>
             </div>
-          </div>
-
-          <div class="hero-feature hero-feature-right">
+          </a>
+          <a href="#features" class="hero-feature hero-feature-right">
             <span class="feature-icon">◔</span>
 
             <div>
               <h3>Smart Sleep</h3>
               <p>Stage analysis</p>
             </div>
-          </div>
+          </a>
 
           <div class="watch-container">
             <div class="watch-glow"></div>
@@ -90,14 +97,14 @@
             />
           </div>
 
-          <div class="hero-feature hero-feature-bottom">
+          <a href="#features" class="hero-feature hero-feature-bottom">
             <span class="feature-icon">⌁</span>
 
             <div>
               <h3>Activity Insights</h3>
               <p>100+ workout types</p>
             </div>
-          </div>
+          </a>
 
           <div class="hero-text mt-5">
             <h1>
@@ -119,7 +126,118 @@
       </section>
 
       <!-- ==================== Features Section ==================== -->
-      <section id="features"></section>
+
+      <section id="features" class="features-section">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="features-header reveal">
+            <span class="features-label"> WHAT PULSEFIT DOES </span>
+
+            <h2>
+              Five ways it changes
+              <br />
+              how you feel every day.
+            </h2>
+
+            <p>
+              Every feature is engineered around one goal — helping you
+              understand and improve your health without thinking about it.
+            </p>
+          </div>
+
+          <!-- Features Cards -->
+          <div class="row g-4 features-grid">
+            <!-- Feature 1 -->
+            <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
+              <div class="feature-card">
+                <div class="feature-card-icon icon-pink">
+                  <i class="bi bi-heart"></i>
+                </div>
+
+                <h3>Real-Time Health</h3>
+
+                <p>
+                  Medical-grade sensors continuously track heart rate, SpO₂, and
+                  stress levels — delivering biometric insights you can actually
+                  act on, 24 hours a day.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-lg-4 col-md-6 reveal reveal-delay-2">
+              <div class="feature-card">
+                <div class="feature-card-icon icon-purple">
+                  <i class="bi bi-moon"></i>
+                </div>
+
+                <h3>Smart Sleep Tracking</h3>
+
+                <p>
+                  Advanced stage analysis monitors deep, REM, and light cycles
+                  to optimize your recovery window and help you wake up
+                  genuinely refreshed.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-lg-4 col-md-6 reveal reveal-delay-3">
+              <div class="feature-card">
+                <div class="feature-card-icon icon-green">
+                  <i class="bi bi-activity"></i>
+                </div>
+
+                <h3>Activity Insights</h3>
+
+                <p>
+                  AI-powered coaching adapts to your fitness level, auto-detects
+                  100+ workout types, and reveals patterns in your performance
+                  over time.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="col-lg-6 col-md-6 reveal reveal-delay-4">
+              <div class="feature-card feature-card-wide">
+                <div class="feature-card-icon icon-blue">
+                  <i class="bi bi-send"></i>
+                </div>
+
+                <div>
+                  <h3>GPS Precision</h3>
+
+                  <p>
+                    Multi-band GPS with real-time route tracking and
+                    turn-by-turn navigation keeps you on course — across trails,
+                    cities, and everything between.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="col-lg-6 col-md-6 reveal reveal-delay-5">
+              <div class="feature-card feature-card-wide">
+                <div class="feature-card-icon icon-green">
+                  <i class="bi bi-shield"></i>
+                </div>
+
+                <div>
+                  <h3>Aqua Shield</h3>
+
+                  <p>
+                    5ATM water resistance and dedicated swim tracking mean
+                    PulseFit never needs to come off — through rain, surf, and
+                    the open sea.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- ==================== About Section ==================== -->
       <section id="about"></section>
@@ -135,7 +253,7 @@
     <footer></footer>
 
     <!-- JavaScript -->
-     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
