@@ -891,3 +891,348 @@ body {
     margin-bottom: 20px;
   }
 }
+
+/* ==================== About Section ==================== */
+
+.about-section {
+  position: relative;
+
+  padding: 120px 0;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(55, 111, 255, 0.08),
+      transparent 30%
+    ),
+    #080b25;
+}
+
+/* ==================== About Content ==================== */
+
+.about-content {
+  padding-right: 50px;
+}
+
+.about-label {
+  display: inline-block;
+
+  margin-bottom: 24px;
+
+  color: #3f8cff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.about-content h2 {
+  margin: 0 0 28px;
+
+  color: #f3f5ff;
+
+  font-size: clamp(44px, 5vw, 68px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2.5px;
+}
+
+.about-description {
+  max-width: 620px;
+
+  margin: 0 0 22px;
+
+  color: #8f98bd;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+/* ==================== About Points ==================== */
+
+.about-points {
+  margin-top: 32px;
+
+  padding-bottom: 36px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-point {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+
+  color: #a9b3dc;
+
+  font-size: 15px;
+}
+
+.about-point:last-child {
+  margin-bottom: 0;
+}
+
+.about-check {
+  width: 22px;
+  height: 22px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(63, 140, 255, 0.15);
+
+  color: #3f8cff;
+
+  font-size: 12px;
+}
+
+/* ==================== About Stats ==================== */
+
+.about-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+
+  padding-top: 32px;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.about-stat strong {
+  color: #f3f5ff;
+
+  font-size: 27px;
+
+  font-weight: 700;
+}
+
+.about-stat span {
+  color: #7885b3;
+
+  font-size: 12px;
+}
+
+/* ==================== About Visual ==================== */
+
+.about-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 600px;
+}
+
+.about-watch-container {
+  position: relative;
+
+  width: 520px;
+  height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Watch */
+
+.about-watch {
+  position: relative;
+
+  width: 180px;
+  height: auto;
+
+  z-index: 3;
+
+  animation: aboutWatchFloat 4s ease-in-out infinite;
+}
+
+/* Glow */
+
+.about-watch-glow {
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(55, 111, 255, 0.2);
+
+  filter: blur(60px);
+
+  z-index: 1;
+}
+
+/* Rings */
+
+.about-ring {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(63, 140, 255, 0.12);
+
+  border-radius: 50%;
+
+  z-index: 2;
+}
+
+.ring-one {
+  width: 390px;
+  height: 390px;
+}
+
+.ring-two {
+  width: 320px;
+  height: 320px;
+}
+
+/* ==================== About Animation ==================== */
+
+@keyframes aboutWatchFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 991px) {
+  .about-section {
+    padding: 90px 0;
+  }
+
+  .about-content {
+    padding-right: 0;
+
+    text-align: center;
+  }
+
+  .about-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-points {
+    max-width: 550px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+  .about-stats {
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    text-align: left;
+  }
+
+  .about-visual {
+    min-height: 500px;
+
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-section {
+    padding: 70px 0;
+  }
+
+  .about-label {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .about-content h2 {
+    font-size: 42px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .about-description {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .about-point {
+    font-size: 13px;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    text-align: center;
+  }
+
+  .about-stat strong {
+    font-size: 24px;
+  }
+
+  .about-visual {
+    min-height: 400px;
+  }
+
+  .about-watch-container {
+    width: 330px;
+    height: 330px;
+  }
+
+  .about-watch {
+    width: 135px;
+  }
+
+  .about-watch-glow {
+    width: 200px;
+    height: 200px;
+  }
+
+  .ring-one {
+    width: 280px;
+    height: 280px;
+  }
+
+  .ring-two {
+    width: 225px;
+    height: 225px;
+  }
+}
