@@ -1,3 +1,5 @@
+/* ==================== Base ==================== */
+
 * {
   box-sizing: border-box;
 }
@@ -10,21 +12,39 @@ body {
   margin: 0;
   padding-top: 92px;
   background: #080b25;
-  color: #ffffff;
+  color: #fff;
   font-family: Arial, sans-serif;
 }
 
-/* Navbar */
+a {
+  text-decoration: none;
+}
+
+/* ==================== Shared ==================== */
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, #3f8cff, #7047f5);
+  color: #fff;
+  transition: 0.25s ease;
+}
+
+.gradient-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ==================== Navbar ==================== */
 
 .site-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0 0 auto;
   z-index: 1000;
-
   background: linear-gradient(90deg, #080b25, #0d0d2d, #080b25);
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -32,22 +52,17 @@ body {
   width: 90%;
   max-width: 1360px;
   min-height: 92px;
-  margin: 0 auto;
-
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Logo */
-
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
-
   color: #f5f5ff;
-  text-decoration: none;
   font-size: 24px;
   font-weight: 700;
 }
@@ -55,14 +70,10 @@ body {
 .logo-icon {
   width: 42px;
   height: 42px;
-
   display: grid;
   place-items: center;
-
   border-radius: 12px;
   background: linear-gradient(135deg, #3f8cff, #7047f5);
-
-  color: white;
   font-size: 20px;
 }
 
@@ -70,13 +81,10 @@ body {
   letter-spacing: -0.5px;
 }
 
-/* Navigation */
-
 .nav-links {
   display: flex;
   align-items: center;
   gap: 46px;
-
   margin: 0;
   padding: 0;
   list-style: none;
@@ -84,42 +92,32 @@ body {
 
 .nav-links a {
   color: #8f98bd;
-  text-decoration: none;
-
   font-size: 17px;
   font-weight: 500;
-
   transition: 0.25s ease;
 }
 
 .nav-links a:hover {
-  color: white;
+  color: #fff;
 }
 
-/* Pre-order button */
-
 .nav-cta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   min-width: 158px;
   height: 60px;
   padding: 0 28px;
-
   border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(135deg, #3f8cff, #7047f5);
-
-  color: white;
-  text-decoration: none;
-
+  color: #fff;
   font-size: 17px;
   font-weight: 600;
-
   transition: 0.25s ease;
 }
 
 .nav-cta:hover {
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(80, 91, 255, 0.3);
 }
@@ -129,10 +127,8 @@ body {
 .hero {
   position: relative;
   overflow: hidden;
-
   min-height: calc(100vh - 92px);
   padding: 20px 0 80px;
-
   background:
     radial-gradient(
       circle at 50% 40%,
@@ -143,196 +139,143 @@ body {
 }
 
 .hero-content {
+  position: relative;
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
-
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  position: relative;
 }
 
-/* ==================== Watch Area ==================== */
+/* Watch */
 
 .watch-container {
   position: relative;
-
+  width: 100%;
+  height: 430px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 100%;
-  height: 430px;
-
   animation: watchFloat 4s ease-in-out infinite;
 }
 
 .hero-watch {
-  width: 220px;
-  height: auto;
-
-  display: block;
-
   position: relative;
   z-index: 2;
+  width: 220px;
+  height: auto;
+  display: block;
 }
 
 .watch-glow {
   position: absolute;
-
-  width: 330px;
-  height: 330px;
-
   top: 50%;
   left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  border-radius: 50%;
-
-  background: rgba(55, 111, 255, 0.22);
-
-  filter: blur(55px);
-
   z-index: 1;
+  width: 330px;
+  height: 330px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(55, 111, 255, 0.22);
+  filter: blur(55px);
 }
 
-/* ==================== Hero Features ==================== */
+/* Hero Feature Cards */
 
 .hero-feature {
   position: absolute;
-
+  z-index: 3;
   min-width: 205px;
   padding: 14px 18px;
-
   display: flex;
   align-items: center;
   gap: 12px;
-
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-
   background: rgba(24, 30, 58, 0.75);
-
   backdrop-filter: blur(10px);
-
-  z-index: 3;
-
-  animation: featureFloat 4s ease-in-out infinite;
-
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
+  animation: featureFloat 4s ease-in-out infinite;
 }
 
 .hero-feature h3 {
   margin: 0 0 4px;
-
-  color: #ffffff;
-
+  color: #fff;
   font-size: 15px;
   font-weight: 600;
 }
 
 .hero-feature p {
   margin: 0;
-
   color: #8f98bd;
-
   font-size: 13px;
 }
 
 .feature-icon {
   width: 38px;
   height: 38px;
-
+  flex-shrink: 0;
   display: grid;
   place-items: center;
-
-  flex-shrink: 0;
-
   border-radius: 50%;
-
   background: rgba(80, 90, 200, 0.2);
-
   color: #8fa7ff;
-
   font-size: 20px;
 }
-
-/* Feature positions */
 
 .hero-feature-left {
   top: 10%;
   left: 20%;
-
   animation-delay: 0.3s;
 }
 
 .hero-feature-right {
   top: 20%;
   right: 20%;
-
   animation-delay: 0.8s;
 }
 
 .hero-feature-bottom {
   bottom: 38%;
   left: 30%;
-
   transform: translateX(-50%);
-
   animation-delay: 1.2s;
 }
 
-/* ==================== Hero Text ==================== */
+/* Hero Text */
 
 .hero-text {
   position: relative;
-
-  width: 100%;
-
-  text-align: center;
-
   z-index: 3;
+  width: 100%;
+  text-align: center;
 }
 
 .hero-text h1 {
   margin: 0;
-
   color: #f3f5ff;
-
   font-size: clamp(42px, 5vw, 72px);
   line-height: 0.95;
-
   letter-spacing: -2px;
 }
 
 .hero-text h1 span {
   display: block;
-
   background: linear-gradient(90deg, #3f8cff, #7a5cff);
-
-  -webkit-background-clip: text;
   background-clip: text;
-
+  -webkit-background-clip: text;
   color: transparent;
 }
 
 .hero-text p {
-  margin: 18px auto 22px;
-
   max-width: 600px;
-
+  margin: 18px auto 22px;
   color: #8f98bd;
-
   font-size: 17px;
   line-height: 1.6;
 }
-
-/* ==================== Buttons ==================== */
 
 .hero-buttons {
   display: flex;
@@ -343,37 +286,548 @@ body {
 .hero-btn {
   min-width: 170px;
   padding: 15px 24px;
-
   border-radius: 30px;
-
-  text-decoration: none;
-
+  color: #fff;
   font-size: 15px;
   font-weight: 600;
-
   transition: 0.25s ease;
 }
 
 .hero-btn.primary {
   background: linear-gradient(135deg, #3f8cff, #7047f5);
-
-  color: #ffffff;
 }
 
 .hero-btn.secondary {
   border: 1px solid rgba(255, 255, 255, 0.15);
-
-  color: #ffffff;
-
   background: transparent;
 }
 
 .hero-btn:hover {
+  color: #fff;
   transform: translateY(-2px);
 }
 
 .hero-btn.primary:hover {
   box-shadow: 0 10px 30px rgba(70, 100, 255, 0.3);
+}
+
+/* ==================== Features ==================== */
+
+.features-section {
+  position: relative;
+  padding: 110px 0 120px;
+  overflow: hidden;
+  background: #080b25;
+}
+
+.features-header {
+  max-width: 720px;
+  margin: 0 auto 68px;
+  text-align: center;
+}
+
+.features-label,
+.about-label {
+  display: inline-block;
+  color: #3f8cff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.features-label {
+  margin-bottom: 20px;
+}
+
+.features-header h2 {
+  margin: 0;
+  color: #f3f5ff;
+  font-size: 3em;
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.features-header p {
+  max-width: 650px;
+  margin: 24px auto 0;
+  color: #8f98bd;
+  font-size: 1em;
+  line-height: 1.7;
+}
+
+/* Feature Cards */
+
+.feature-card {
+  height: 100%;
+  min-height: 230px;
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(10, 16, 43, 0.85);
+  transition: 0.35s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(85, 125, 255, 0.35);
+  background: rgba(15, 22, 54, 0.95);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.feature-card-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  font-size: 23px;
+}
+
+.icon-pink {
+  background: rgba(255, 74, 151, 0.14);
+  color: #ff5b9a;
+}
+
+.icon-purple {
+  background: rgba(112, 71, 245, 0.16);
+  color: #a78bfa;
+}
+
+.icon-green {
+  background: rgba(0, 220, 180, 0.13);
+  color: #32e6c1;
+}
+
+.icon-blue {
+  background: rgba(63, 140, 255, 0.14);
+  color: #5da1ff;
+}
+
+.feature-card h3 {
+  margin: 0 0 12px;
+  color: #f3f5ff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #8f98bd;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.feature-card-wide {
+  min-height: 145px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.feature-card-wide .feature-card-icon {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+/* Reveal */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+.reveal-delay-5 {
+  transition-delay: 0.5s;
+}
+
+/* ==================== About ==================== */
+
+.about-section {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(55, 111, 255, 0.08),
+      transparent 30%
+    ),
+    #080b25;
+}
+
+.about-content {
+  padding-right: 50px;
+}
+
+.about-label {
+  margin-bottom: 24px;
+}
+
+.about-content h2 {
+  margin: 0 0 28px;
+  color: #f3f5ff;
+  font-size: clamp(44px, 5vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+}
+
+.about-description {
+  max-width: 620px;
+  margin: 0 0 22px;
+  color: #8f98bd;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* About Points */
+
+.about-points {
+  margin-top: 32px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-point {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #a9b3dc;
+  font-size: 15px;
+}
+
+.about-point:last-child {
+  margin-bottom: 0;
+}
+
+.about-check {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(63, 140, 255, 0.15);
+  color: #3f8cff;
+  font-size: 12px;
+}
+
+/* About Stats */
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding-top: 32px;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.about-stat strong {
+  color: #f3f5ff;
+  font-size: 27px;
+}
+
+.about-stat span {
+  color: #7885b3;
+  font-size: 12px;
+}
+
+/* About Visual */
+
+.about-visual {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-watch-container {
+  position: relative;
+  width: 520px;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-watch {
+  position: relative;
+  z-index: 3;
+  width: 180px;
+  height: auto;
+  animation: aboutWatchFloat 4s ease-in-out infinite;
+}
+
+.about-watch-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 260px;
+  height: 260px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(55, 111, 255, 0.2);
+  filter: blur(60px);
+}
+
+.about-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(63, 140, 255, 0.12);
+  border-radius: 50%;
+}
+
+.ring-one {
+  width: 390px;
+  height: 390px;
+}
+
+.ring-two {
+  width: 320px;
+  height: 320px;
+}
+
+/* ==================== Pricing ==================== */
+
+.pricing-section {
+  min-height: 100vh;
+  padding: 120px 0 100px;
+  background: #05091c;
+  color: #f5f7ff;
+}
+
+/* Pricing Watch */
+
+.pricing-watch-container {
+  position: relative;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-watch-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: rgba(70, 120, 255, 0.15);
+  filter: blur(60px);
+}
+
+.pricing-watch {
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  max-width: 80%;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Price */
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+
+.pricing-price #productPrice {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.starting-price {
+  color: #8fa4d8;
+  font-size: 16px;
+}
+
+.pricing-info {
+  margin: 8px 0 40px;
+  color: #82a1dd;
+}
+
+/* Options */
+
+.pricing-option {
+  margin-bottom: 32px;
+}
+
+.pricing-label {
+  display: block;
+  margin-bottom: 14px;
+  color: #619eff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.pricing-label strong {
+  color: #f5f7ff;
+  letter-spacing: 0;
+}
+
+/* Models */
+
+.model-card {
+  width: 100%;
+  min-height: 115px;
+  padding: 18px;
+  border: 1px solid #182344;
+  border-radius: 17px;
+  background: #080e26;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.model-card:hover,
+.model-card.active {
+  border-color: #3f8cff;
+}
+
+.model-card:hover {
+  transform: translateY(-3px);
+}
+
+.model-card.active {
+  background: #0b1531;
+  box-shadow: 0 0 20px rgba(63, 140, 255, 0.08);
+}
+
+.model-card h3 {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.model-card p {
+  margin-bottom: 8px;
+  color: #7391ca;
+  font-size: 13px;
+}
+
+.model-card strong {
+  color: #3f91ff;
+  font-size: 15px;
+}
+
+/* Colors */
+
+.color-options {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.color-circle {
+  width: 52px;
+  height: 52px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.color-circle:hover {
+  transform: scale(1.08);
+}
+
+.color-circle.active {
+  border-color: #3f9cff;
+  box-shadow:
+    0 0 0 3px #05091c,
+    0 0 0 5px #3f9cff;
+}
+
+.color-circle.black {
+  background: #1e293b;
+}
+
+.color-circle.white {
+  background: #e7edf7;
+}
+
+.color-circle.purple {
+  background: #7224a8;
+}
+
+/* Pricing Features */
+
+.pricing-features {
+  margin: 35px 0;
+}
+
+.pricing-features p {
+  margin-bottom: 12px;
+  color: #9ab4e7;
+  font-size: 15px;
+}
+
+.pricing-features span {
+  margin-right: 10px;
+  color: #39e6b0;
+  font-size: 18px;
+}
+
+/* Pricing CTA */
+
+.pricing-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 16px 30px;
+  border-radius: 35px;
+  background: linear-gradient(90deg, #3f91ff, #7045ff);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(70, 100, 255, 0.25);
+  transition: 0.3s ease;
+}
+
+.pricing-cta:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(70, 100, 255, 0.35);
+}
+
+.arrow {
+  font-size: 20px;
 }
 
 /* ==================== Animations ==================== */
@@ -400,26 +854,87 @@ body {
   }
 }
 
-/* ==================== Accessibility ==================== */
-
-@media (prefers-reduced-motion: reduce) {
-  .watch-container,
-  .hero-feature {
-    animation: none;
+@keyframes watchFloatMobile {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
   }
 
-  html {
-    scroll-behavior: auto;
+  50% {
+    transform: translate(-50%, calc(-50% - 10px));
   }
 }
-/* ==================== Mobile / Tablet ==================== */
+
+@keyframes aboutWatchFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ==================== Tablet ==================== */
+
+@media (max-width: 991px) {
+  .about-section {
+    padding: 90px 0;
+  }
+
+  .about-content {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .about-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-points,
+  .about-stats {
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-points,
+  .about-stats {
+    text-align: left;
+  }
+
+  .about-visual {
+    min-height: 500px;
+    margin-top: 30px;
+  }
+
+  .pricing-section {
+    padding-top: 100px;
+  }
+
+  .pricing-watch-container {
+    min-height: 400px;
+  }
+
+  .pricing-watch {
+    width: 240px;
+  }
+
+  .pricing-price #productPrice {
+    font-size: 44px;
+  }
+}
+
+/* ==================== Mobile ==================== */
 
 @media (max-width: 768px) {
   body {
     padding-top: 76px;
   }
 
-  /* ==================== Navbar ==================== */
+  /* Navbar */
 
   .navbar {
     width: 92%;
@@ -427,15 +942,15 @@ body {
   }
 
   .logo {
-    font-size: 20px;
     gap: 9px;
+    font-size: 20px;
   }
 
   .logo-icon {
     width: 36px;
     height: 36px;
-    font-size: 17px;
     border-radius: 10px;
+    font-size: 17px;
   }
 
   .nav-links {
@@ -449,7 +964,7 @@ body {
     font-size: 14px;
   }
 
-  /* ==================== Hero ==================== */
+  /* Hero */
 
   .hero {
     min-height: 900px;
@@ -458,70 +973,44 @@ body {
 
   .hero-content {
     width: 92%;
-    min-height: 900px;
     max-width: none;
-
-    position: relative;
+    min-height: 900px;
     display: block;
   }
 
-  /* ==================== Watch ==================== */
-
   .watch-container {
     position: absolute;
-
-    width: 100%;
-    height: auto;
-
     top: 300px;
     left: 50%;
-
+    width: 100%;
+    height: auto;
     transform: translate(-50%, -50%);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    animation: watchFloatMobile 4s ease-in-out infinite;
-
     z-index: 2;
+    animation: watchFloatMobile 4s ease-in-out infinite;
   }
 
   .hero-watch {
     width: 165px;
-    height: auto;
-
-    display: block;
   }
 
   .watch-glow {
     width: 230px;
     height: 230px;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
   }
 
-  /* ==================== Feature Cards ==================== */
+  /* Hero Features */
 
   .hero-feature {
-    min-width: 0;
     width: 145px;
-
+    min-width: 0;
     padding: 10px;
-
     gap: 8px;
-
     border-radius: 14px;
-
-    z-index: 3;
   }
 
   .hero-feature h3 {
-    font-size: 12px;
     margin-bottom: 3px;
+    font-size: 12px;
   }
 
   .hero-feature p {
@@ -531,323 +1020,60 @@ body {
   .feature-icon {
     width: 30px;
     height: 30px;
-
     font-size: 15px;
   }
-
-  /* Left */
 
   .hero-feature-left {
     top: 40px;
     left: 0;
-
-    animation-delay: 0.3s;
   }
-
-  /* Right */
 
   .hero-feature-right {
     top: 120px;
     right: 0;
-
-    animation-delay: 0.8s;
   }
-
-  /* Bottom */
 
   .hero-feature-bottom {
     top: 450px;
     left: 20%;
-
-    transform: translateX(-50%);
-
-    animation-delay: 1.2s;
   }
 
-  /* ==================== Hero Text ==================== */
+  /* Hero Text */
 
   .hero-text {
     position: absolute;
-
-    width: 100%;
-
     top: 600px;
     left: 50%;
-
+    width: 100%;
     transform: translateX(-50%);
-
-    text-align: center;
-
-    z-index: 3;
   }
 
   .hero-text h1 {
-    margin: 0;
-
     font-size: clamp(38px, 10vw, 48px);
-
     line-height: 0.95;
-
     letter-spacing: -1.5px;
   }
 
   .hero-text p {
-    margin: 18px auto;
-
     max-width: 280px;
-
+    margin: 18px auto;
     font-size: 14px;
-
     line-height: 1.5;
   }
 
-  /* ==================== Buttons ==================== */
-
   .hero-buttons {
     flex-direction: column;
-
     align-items: center;
-
     gap: 10px;
   }
 
   .hero-btn {
     width: 180px;
-
     padding: 14px 20px;
   }
-}
 
-/* ==================== Mobile Animation ==================== */
+  /* Features */
 
-@keyframes watchFloatMobile {
-  0%,
-  100% {
-    transform: translate(-50%, -50%);
-  }
-
-  50% {
-    transform: translate(-50%, calc(-50% - 10px));
-  }
-}
-
-/* ==================== Features Section ==================== */
-
-.features-section {
-  position: relative;
-
-  padding: 110px 0 120px;
-
-  background: #080b25;
-
-  overflow: hidden;
-}
-
-/* ==================== Features Header ==================== */
-
-.features-header {
-  text-align: center;
-
-  max-width: 720px;
-
-  margin: 0 auto 68px;
-}
-
-.features-label {
-  display: inline-block;
-
-  margin-bottom: 20px;
-
-  color: #3f8cff;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  letter-spacing: 3px;
-}
-
-.features-header h2 {
-  margin: 0;
-
-  color: #f3f5ff;
-
-  font-size: 3em;
-
-  line-height: 1.05;
-
-  letter-spacing: -2px;
-
-  font-weight: 700;
-}
-
-.features-header p {
-  max-width: 650px;
-
-  margin: 24px auto 0;
-
-  color: #8f98bd;
-
-  font-size: 1em;
-
-  line-height: 1.7;
-}
-
-/* ==================== Feature Cards ==================== */
-
-.feature-card {
-  height: 100%;
-
-  min-height: 230px;
-
-  padding: 26px;
-
-  border: 1px solid rgba(255, 255, 255, 0.09);
-
-  border-radius: 16px;
-
-  background: rgba(10, 16, 43, 0.85);
-
-  transition:
-    transform 0.35s ease,
-    border-color 0.35s ease,
-    background 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-/* Hover */
-
-.feature-card:hover {
-  transform: translateY(-7px);
-
-  border-color: rgba(85, 125, 255, 0.35);
-
-  background: rgba(15, 22, 54, 0.95);
-
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-}
-
-/* ==================== Feature Icon ==================== */
-
-.feature-card-icon {
-  width: 50px;
-  height: 50px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 25px;
-
-  border-radius: 15px;
-
-  font-size: 23px;
-}
-
-/* Icon Colors */
-
-.icon-pink {
-  background: rgba(255, 74, 151, 0.14);
-  color: #ff5b9a;
-}
-
-.icon-purple {
-  background: rgba(112, 71, 245, 0.16);
-  color: #a78bfa;
-}
-
-.icon-green {
-  background: rgba(0, 220, 180, 0.13);
-  color: #32e6c1;
-}
-
-.icon-blue {
-  background: rgba(63, 140, 255, 0.14);
-  color: #5da1ff;
-}
-
-/* ==================== Card Text ==================== */
-
-.feature-card h3 {
-  margin: 0 0 12px;
-
-  color: #f3f5ff;
-
-  font-size: 18px;
-
-  font-weight: 700;
-}
-
-.feature-card p {
-  margin: 0;
-
-  color: #8f98bd;
-
-  font-size: 15px;
-
-  line-height: 1.65;
-}
-
-/* ==================== Wide Cards ==================== */
-
-.feature-card-wide {
-  min-height: 145px;
-
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 20px;
-}
-
-.feature-card-wide .feature-card-icon {
-  flex-shrink: 0;
-
-  margin-bottom: 0;
-}
-
-/* ==================== Reveal Animation ==================== */
-
-.reveal {
-  opacity: 0;
-
-  transform: translateY(45px);
-
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-
-  transform: translateY(0);
-}
-
-/* ==================== Animation Delays ==================== */
-
-.reveal-delay-1 {
-  transition-delay: 0.1s;
-}
-
-.reveal-delay-2 {
-  transition-delay: 0.2s;
-}
-
-.reveal-delay-3 {
-  transition-delay: 0.3s;
-}
-
-.reveal-delay-4 {
-  transition-delay: 0.4s;
-}
-
-.reveal-delay-5 {
-  transition-delay: 0.5s;
-}
-
-/* ==================== Responsive ==================== */
-
-@media (max-width: 768px) {
   .features-section {
     padding: 80px 0 90px;
   }
@@ -863,27 +1089,22 @@ body {
 
   .features-header h2 {
     font-size: 38px;
-
     letter-spacing: -1px;
   }
 
   .features-header p {
-    font-size: 14px;
-
     max-width: 320px;
+    font-size: 14px;
   }
 
   .feature-card {
     min-height: 210px;
-
     padding: 22px;
   }
 
   .feature-card-wide {
     min-height: 180px;
-
     flex-direction: column;
-
     gap: 0;
   }
 
@@ -892,303 +1113,27 @@ body {
   }
 }
 
-/* ==================== About Section ==================== */
-
-.about-section {
-  position: relative;
-
-  padding: 120px 0;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 75% 50%,
-      rgba(55, 111, 255, 0.08),
-      transparent 30%
-    ),
-    #080b25;
-}
-
-/* ==================== About Content ==================== */
-
-.about-content {
-  padding-right: 50px;
-}
-
-.about-label {
-  display: inline-block;
-
-  margin-bottom: 24px;
-
-  color: #3f8cff;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  letter-spacing: 3px;
-}
-
-.about-content h2 {
-  margin: 0 0 28px;
-
-  color: #f3f5ff;
-
-  font-size: clamp(44px, 5vw, 68px);
-
-  line-height: 1.05;
-
-  letter-spacing: -2.5px;
-}
-
-.about-description {
-  max-width: 620px;
-
-  margin: 0 0 22px;
-
-  color: #8f98bd;
-
-  font-size: 16px;
-
-  line-height: 1.7;
-}
-
-/* ==================== About Points ==================== */
-
-.about-points {
-  margin-top: 32px;
-
-  padding-bottom: 36px;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.about-point {
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  margin-bottom: 18px;
-
-  color: #a9b3dc;
-
-  font-size: 15px;
-}
-
-.about-point:last-child {
-  margin-bottom: 0;
-}
-
-.about-check {
-  width: 22px;
-  height: 22px;
-
-  display: grid;
-  place-items: center;
-
-  flex-shrink: 0;
-
-  border-radius: 50%;
-
-  background: rgba(63, 140, 255, 0.15);
-
-  color: #3f8cff;
-
-  font-size: 12px;
-}
-
-/* ==================== About Stats ==================== */
-
-.about-stats {
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 25px;
-
-  padding-top: 32px;
-}
-
-.about-stat {
-  display: flex;
-  flex-direction: column;
-
-  gap: 5px;
-}
-
-.about-stat strong {
-  color: #f3f5ff;
-
-  font-size: 27px;
-
-  font-weight: 700;
-}
-
-.about-stat span {
-  color: #7885b3;
-
-  font-size: 12px;
-}
-
-/* ==================== About Visual ==================== */
-
-.about-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 600px;
-}
-
-.about-watch-container {
-  position: relative;
-
-  width: 520px;
-  height: 520px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Watch */
-
-.about-watch {
-  position: relative;
-
-  width: 180px;
-  height: auto;
-
-  z-index: 3;
-
-  animation: aboutWatchFloat 4s ease-in-out infinite;
-}
-
-/* Glow */
-
-.about-watch-glow {
-  position: absolute;
-
-  width: 260px;
-  height: 260px;
-
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  border-radius: 50%;
-
-  background: rgba(55, 111, 255, 0.2);
-
-  filter: blur(60px);
-
-  z-index: 1;
-}
-
-/* Rings */
-
-.about-ring {
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  border: 1px solid rgba(63, 140, 255, 0.12);
-
-  border-radius: 50%;
-
-  z-index: 2;
-}
-
-.ring-one {
-  width: 390px;
-  height: 390px;
-}
-
-.ring-two {
-  width: 320px;
-  height: 320px;
-}
-
-/* ==================== About Animation ==================== */
-
-@keyframes aboutWatchFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-/* ==================== Responsive ==================== */
-
-@media (max-width: 991px) {
-  .about-section {
-    padding: 90px 0;
-  }
-
-  .about-content {
-    padding-right: 0;
-
-    text-align: center;
-  }
-
-  .about-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .about-points {
-    max-width: 550px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    text-align: left;
-  }
-
-  .about-stats {
-    max-width: 550px;
-
-    margin: 0 auto;
-
-    text-align: left;
-  }
-
-  .about-visual {
-    min-height: 500px;
-
-    margin-top: 30px;
-  }
-}
+/* ==================== Small Mobile ==================== */
 
 @media (max-width: 576px) {
+  /* About */
+
   .about-section {
     padding: 70px 0;
   }
 
   .about-label {
     font-size: 11px;
-
     letter-spacing: 2px;
   }
 
   .about-content h2 {
     font-size: 42px;
-
     letter-spacing: -1.5px;
   }
 
   .about-description {
     font-size: 14px;
-
     line-height: 1.6;
   }
 
@@ -1198,9 +1143,7 @@ body {
 
   .about-stats {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 25px;
-
     text-align: center;
   }
 
@@ -1235,288 +1178,9 @@ body {
     width: 225px;
     height: 225px;
   }
-}
 
-/* ==================== Pricing Section ==================== */
+  /* Pricing */
 
-.pricing-section {
-  min-height: 100vh;
-  padding: 120px 0 100px;
-  background: #05091c;
-  color: #f5f7ff;
-}
-
-/* ==================== Watch ==================== */
-
-.pricing-watch-container {
-  position: relative;
-  min-height: 550px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pricing-watch-glow {
-  position: absolute;
-
-  width: 350px;
-  height: 350px;
-
-  border-radius: 50%;
-
-  background: rgba(70, 120, 255, 0.15);
-
-  filter: blur(60px);
-
-  z-index: 0;
-}
-
-.pricing-watch {
-  position: relative;
-
-  width: 300px;
-  max-width: 80%;
-
-  z-index: 1;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-/* ==================== Price ==================== */
-
-.pricing-price {
-  display: flex;
-  align-items: baseline;
-  gap: 15px;
-}
-
-.pricing-price #productPrice {
-  font-size: 52px;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.starting-price {
-  color: #8fa4d8;
-  font-size: 16px;
-}
-
-.pricing-info {
-  color: #82a1dd;
-  margin-top: 8px;
-  margin-bottom: 40px;
-}
-
-/* ==================== Labels ==================== */
-
-.pricing-option {
-  margin-bottom: 32px;
-}
-
-.pricing-label {
-  display: block;
-
-  color: #619eff;
-
-  font-size: 13px;
-  font-weight: 600;
-
-  letter-spacing: 2px;
-
-  margin-bottom: 14px;
-}
-
-.pricing-label strong {
-  color: #f5f7ff;
-  letter-spacing: 0;
-}
-
-/* ==================== Model Cards ==================== */
-
-.model-card {
-  width: 100%;
-
-  min-height: 115px;
-
-  padding: 18px;
-
-  text-align: left;
-
-  border: 1px solid #182344;
-  border-radius: 17px;
-
-  background: #080e26;
-
-  color: white;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-}
-
-.model-card:hover {
-  border-color: #3f8cff;
-  transform: translateY(-3px);
-}
-
-.model-card.active {
-  border-color: #3f8cff;
-  background: #0b1531;
-  box-shadow: 0 0 20px rgba(63, 140, 255, 0.08);
-}
-
-.model-card h3 {
-  font-size: 16px;
-  font-weight: 700;
-
-  margin-bottom: 5px;
-}
-
-.model-card p {
-  color: #7391ca;
-
-  font-size: 13px;
-
-  margin-bottom: 8px;
-}
-
-.model-card strong {
-  color: #3f91ff;
-  font-size: 15px;
-}
-
-/* ==================== Colors ==================== */
-
-.color-options {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.color-circle {
-  width: 52px;
-  height: 52px;
-
-  border-radius: 50%;
-
-  border: 2px solid transparent;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-}
-
-.color-circle:hover {
-  transform: scale(1.08);
-}
-
-.color-circle.active {
-  border-color: #3f9cff;
-
-  box-shadow:
-    0 0 0 3px #05091c,
-    0 0 0 5px #3f9cff;
-}
-
-/* Colors */
-
-.color-circle.black {
-  background: #1e293b;
-}
-
-.color-circle.white {
-  background: #e7edf7;
-}
-
-.color-circle.purple {
-  background: #7224a8;
-}
-
-/* ==================== Features ==================== */
-
-.pricing-features {
-  margin: 35px 0;
-}
-
-.pricing-features p {
-  color: #9ab4e7;
-
-  margin-bottom: 12px;
-
-  font-size: 15px;
-}
-
-.pricing-features span {
-  color: #39e6b0;
-
-  font-size: 18px;
-
-  margin-right: 10px;
-}
-
-/* ==================== CTA ==================== */
-
-.pricing-cta {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 15px;
-
-  padding: 16px 30px;
-
-  border-radius: 35px;
-
-  background: linear-gradient(90deg, #3f91ff, #7045ff);
-
-  color: white;
-
-  text-decoration: none;
-
-  font-weight: 700;
-
-  box-shadow: 0 10px 30px rgba(70, 100, 255, 0.25);
-
-  transition: all 0.3s ease;
-}
-
-.pricing-cta:hover {
-  color: white;
-
-  transform: translateY(-3px);
-
-  box-shadow: 0 15px 35px rgba(70, 100, 255, 0.35);
-}
-
-.arrow {
-  font-size: 20px;
-}
-
-/* ==================== Responsive ==================== */
-
-@media (max-width: 991px) {
-  .pricing-section {
-    padding-top: 100px;
-  }
-
-  .pricing-watch-container {
-    min-height: 400px;
-  }
-
-  .pricing-watch {
-    width: 240px;
-  }
-
-  .pricing-price #productPrice {
-    font-size: 44px;
-  }
-}
-
-@media (max-width: 576px) {
   .pricing-section {
     padding: 80px 20px;
   }
@@ -1539,5 +1203,19 @@ body {
 
   .pricing-cta {
     width: 100%;
+  }
+}
+
+/* ==================== Accessibility ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .watch-container,
+  .hero-feature,
+  .about-watch {
+    animation: none;
   }
 }
