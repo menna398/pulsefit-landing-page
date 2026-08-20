@@ -1219,3 +1219,175 @@ a {
     animation: none;
   }
 }
+
+/************* Contact *****************/
+.contact-section {
+  padding: 100px 0;
+  background: #030817;
+}
+
+.contact-header {
+  margin-bottom: 65px;
+}
+
+.contact-header span {
+  color: #398cff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.contact-header h2 {
+  color: #f0f4ff;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 18px 0;
+}
+
+.contact-header p {
+  color: #79a0e5;
+  font-size: 16px;
+}
+
+/* Form */
+
+.contact-form {
+  background: #071126;
+  border: 1px solid #18294b;
+  border-radius: 16px;
+  padding: 34px;
+}
+
+.contact-form label {
+  display: block;
+  color: #7799d2;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: #151d35;
+  border: 1px solid #293652;
+  border-radius: 16px;
+  padding: 14px 16px;
+  color: #fff;
+  outline: none;
+}
+
+.contact-form input {
+  height: 48px;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #7790c0;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #398cff;
+}
+
+.contact-form button {
+  width: 100%;
+  border: none;
+  border-radius: 30px;
+  padding: 15px;
+  background: linear-gradient(90deg, #398cff, #744cff);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-form button i {
+  margin-left: 8px;
+}
+
+/* Contact Info */
+
+.contact-info {
+  padding-top: 5px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.info-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: 1px solid #174276;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #398cff;
+  background: #071a35;
+  font-size: 19px;
+}
+
+.info-item span {
+  color: #7196d1;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.info-item p {
+  margin: 4px 0 0;
+  color: #e3ebff;
+  font-size: 15px;
+}
+
+/* Social */
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.social-icons a {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #1c3157;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7196d1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: white;
+  border-color: #398cff;
+  background: #0a1d3b;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 70px 20px;
+  }
+
+  .contact-header h2 {
+    font-size: 34px;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+}
